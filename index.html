@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rivu Panda | Portfolio</title>
+  <style>
+    /* ===== Global Styles ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #0d1117;
+      color: #e6edf3;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: #58a6ff;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #1f6feb;
+    }
+
+    h1, h2, h3 {
+      color: #fff;
+    }
+
+    /* ===== Navbar ===== */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #161b22;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+      border-bottom: 1px solid #30363d;
+    }
+
+    nav .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #58a6ff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: #c9d1d9;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #58a6ff;
+    }
+
+    /* ===== Sections ===== */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 90vh;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: .5rem;
+    }
+
+    .hero h2 {
+      color: #8b949e;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      color: #a1a1aa;
+      margin-bottom: 2rem;
+    }
+
+    .hero .buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      background-color: #58a6ff;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #1f6feb;
+      transform: translateY(-3px);
+    }
+
+    /* ===== About Section ===== */
+    .about p {
+      color: #c9d1d9;
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    /* ===== Skills Section ===== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .skill-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 1rem;
+      transition: transform 0.3s, border 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      border-color: #58a6ff;
+    }
+
+    .skill-card h3 {
+      margin-bottom: .5rem;
+      color: #fff;
+    }
+
+    /* ===== Projects Section ===== */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: transform 0.3s, border 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: #58a6ff;
+    }
+
+    .project-card h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card p {
+      color: #a1a1aa;
+    }
+
+    /* ===== Achievements and Education ===== */
+    ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+
+    ul li {
+      margin-bottom: .5rem;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '•';
+      color: #58a6ff;
+      position: absolute;
+      left: -1rem;
+    }
+
+    /* ===== Contact Section ===== */
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .contact-links a {
+      background: #161b22;
+      border: 1px solid #30363d;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      transition: all 0.3s;
+    }
+
+    .contact-links a:hover {
+      border-color: #58a6ff;
+      transform: translateY(-3px);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid #30363d;
+      font-size: 0.9rem;
+      color: #8b949e;
+    }
+    
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Rivu Panda</div>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <h1>Rivu Panda</h1>
+    <h2>Computer Science Engineering Student</h2>
+    <p>DSA Enthusiast | AI Explorer | Software Developer</p>
+    <div class="buttons">
+      <a href="#" class="btn">Download Resume</a>
+      <a href="#contact" class="btn">Let's Connect</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      Passionate Computer Science student with strong foundations in Data Structures and Algorithms,
+      aiming to build scalable software systems and explore Artificial Intelligence applications.
+    </p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Programming Languages</h3>
+        <p>C, C++, Python, Java</p>
+      </div>
+      <div class="skill-card">
+        <h3>Web Technologies</h3>
+        <p>HTML, CSS, JavaScript</p>
+      </div>
+      <div class="skill-card">
+        <h3>Core Subjects</h3>
+        <p>Data Structures & Algorithms, OOPS, DBMS, OS, Computer Networks</p>
+      </div>
+      <div class="skill-card">
+        <h3>Tools</h3>
+        <p>Git, VS Code, Linux</p>
+      </div>
+      <div class="skill-card">
+        <h3>Cloud</h3>
+        <p>Google Cloud Platform</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Time Capsule – Digital Storage App</h3>
+        <p>Built using Java and File Handling.<br>Implements date-based unlocking logic.</p>
+      </div>
+      <div class="project-card">
+        <h3>Expense Tracker Application</h3>
+        <p>Built using Python, Tkinter, SQLite.<br>Tracks and analyzes monthly expenses.</p>
+      </div>
+      <div class="project-card">
+        <h3>Yes/No Decision Android App</h3>
+        <p>Built using Android Studio.<br>Random logic-based decision generator.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section id="achievements">
+    <h2>Achievements</h2>
+    <ul>
+      <li>Solved 200+ DSA problems on LeetCode</li>
+      <li>Gen AI Competition Winner</li>
+      <li>Participated in multiple coding contests</li>
+    </ul>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education">
+    <h2>Education</h2>
+    <p><strong>B.Tech in Computer Science</strong><br>
+      Institute of Engineering & Management<br>
+      2022 – 2026
+    </p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-links">
+      <a href="mailto:rivupanda@example.com">Email</a>
+      
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2024 Rivu Panda. All rights reserved.
+  </footer>
+</body>
+</html>
